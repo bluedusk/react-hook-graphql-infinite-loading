@@ -15,9 +15,11 @@ export const trendingRepositoriesGQLQuery = gql`
         node {
           ... on Repository {
             name
+            url
             owner {
               login
             }
+            homepageUrl
             description
             stargazers {
               totalCount
