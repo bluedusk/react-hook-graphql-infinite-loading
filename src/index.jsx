@@ -15,7 +15,14 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    {process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN ? (
+      <App />
+    ) : (
+      <h1>
+        To run this demo you need to config your access token. Go to readme for
+        more information
+      </h1>
+    )}
   </ApolloProvider>,
   document.getElementById("root")
 );
